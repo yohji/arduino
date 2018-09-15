@@ -1,9 +1,8 @@
 int pinLedA = 5;
 int pinLedB = 6;
-int pinLedI = 13;
 
-int brightness = 0;
-int change = 5;
+int var = 1;
+int sleep = 10;
 
 void setup()
 {
@@ -13,16 +12,21 @@ void setup()
 
 void loop()
 {  
-  analogWrite(pinLedA, 255);
-  delay(1500);
-  analogWrite(pinLedB, 0);
-  
-  digitalWrite(pinLedI, HIGH);
-  delay(500);
-  digitalWrite(pinLedI, LOW);
+  for (int state = 0; state <= 255; state += var) {
+    analogWrite(pinLedA, state);
+    delay(sleep);
+  }
+  for (int state = 250; state >= 0; state -= var) {
+    analogWrite(pinLedA, state);
+    delay(sleep);
+  }
 
-  analogWrite(pinLedA, 255);
-  delay(1500);
-  analogWrite(pinLedB, 0);
-  delay(10);
+  for (int state = 0; state <= 255; state += var) {
+    analogWrite(pinLedB, state);
+    delay(sleep);
+  }
+  for (int state = 250; state >= 0; state -= var) {
+    analogWrite(pinLedB, state);
+    delay(sleep);
+  }
 }
