@@ -1,16 +1,16 @@
-int buzzer = 3;
+#define PIN_BUZZER 3
 
 void setup()
 {
-  pinMode(buzzer, OUTPUT);
+  pinMode(PIN_BUZZER, OUTPUT);
   randomSeed(analogRead(0));
 }
 
 void loop()
 {
-  analogWrite(buzzer, 128);
+  analogWrite(PIN_BUZZER, 128);
   delay(100 + (300 * random(0, 2)));
 
-  analogWrite(buzzer, 0);
+  analogWrite(PIN_BUZZER, 0);
   delay(100);
 }

@@ -1,18 +1,18 @@
-int pinLed = 9;
-int pinPot = A0;
+#define PIN_LED 9
+#define PIN_POT A0
 
 void setup()
 {
   Serial.begin(9600);
-  pinMode(pinLed, OUTPUT);
+  pinMode(PIN_LED, OUTPUT);
 }
 
 void loop()
 {
-  int value = analogRead(pinPot);
+  int value = analogRead(PIN_POT);
   int brightness = map(value, 0, 1023, 0, 255);
   Serial.println((String) value + ":" + brightness);
 
-  analogWrite(pinLed, brightness);
+  analogWrite(PIN_LED, brightness);
   delay(10);
 }
