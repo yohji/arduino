@@ -11,7 +11,7 @@ void setup()
 }
 
 void loop()
-{  
+{
   for (int state = 0; state <= 255; state += STEP) {
     analogWrite(PIN_LED_A, state);
     delay(SYNC);
