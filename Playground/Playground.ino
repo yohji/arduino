@@ -6,5 +6,10 @@ void setup()
 
 void loop()
 {
-  delay(500);
+  delay(50);
+}
+
+float voltage(int analogPin)
+{
+  return (analogRead(analogPin) / 1023.0) * 5.0;
 }
