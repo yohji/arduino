@@ -8,9 +8,8 @@ void setup()
 
 void loop()
 {
-  Serial.println(analogRead(PIN_PHOTO));
-  int value = map(analogRead(PIN_PHOTO), 0, 1023, 3500, 50);
-  tone(PIN_AUDIO, value);
+  int freq = map(analogRead(PIN_PHOTO), 0, 1023, 3500, 50);
+  tone(PIN_AUDIO, freq);
 
   delay(10);
 }

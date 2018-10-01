@@ -1,11 +1,11 @@
 #include "Support.h"
 
-float voltage(int analogPin)
+float Support::voltage(int analogPin)
 {
     return (analogRead(analogPin) / 1023.0f) * 5.0;
 }
 
-void echo(int n_args, ...)
+void Support::echo(int n_args, ...)
 {
     va_list ap;
     va_start(ap, n_args);

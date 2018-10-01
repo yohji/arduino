@@ -1,3 +1,5 @@
+#include <Support.h>
+
 int value;
 
 void setup()
@@ -7,13 +9,12 @@ void setup()
 
 void loop()
 {
-  value = analogRead(A0);
-  float voltage = (value * 5) / 1023.0f;
+  float voltage = Support::voltage(A0);
   float temperature = (25 * voltage) / 1.9375;
 
   value = analogRead(A1);
   float humidity = value;
 
-  Serial.println((String) temperature + "\t" + humidity);
+  Support::echo(2, temperature, humidity);
   delay(1000);
 }

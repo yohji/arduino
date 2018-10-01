@@ -4,7 +4,10 @@
 #include "Arduino.h"
 #include <stdarg.h>
 
-float voltage(int analogPin);
-void echo(int n_args, ...);
+class Support {
+public:
+    static float voltage(int analogPin);
+    static void echo(int n_args, ...);
+};
 
 #endif
